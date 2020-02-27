@@ -1,0 +1,15 @@
+<mvc:View
+        controllerName="de.exxcellent.school.ui5.controller.Start"
+        xmlns="sap.m"
+        xmlns:mvc="sap.ui.core.mvc"
+        displayBlock="true">
+    <Page title="Module 9 exx school UI5">
+        <content>
+            <Panel headerText="Startseite">
+                <Text text="Hello, UI5!"/>
+                <Input value="{dataModel>/text}"/>
+                <Button text="Send message to Angular" press="sendMessage"/>
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>
