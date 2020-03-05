@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Launchpad';
 
+  @Input() appUrl = './assets/ui5app';
+
   startUi5App() {
     window.ui5EventBus.publish('UI5Launchpad', 'loadComponent', {
       name: 'de.exxcellent.school.ui5',
-      url: '../assets/ui5app'
+      url: this.appUrl
     });
   }
 }

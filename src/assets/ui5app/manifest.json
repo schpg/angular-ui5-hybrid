@@ -44,12 +44,21 @@
           "pattern": "",
           "name": "start",
           "target": "start"
+        },
+        {
+          "pattern": "detail",
+          "name": "detail",
+          "target": "detail"
         }
       ],
       "targets": {
         "start": {
           "viewId": "start",
           "viewName": "Start"
+        },
+        "detail": {
+          "viewId": "detail",
+          "viewName": "Detail"
         }
       }
     }

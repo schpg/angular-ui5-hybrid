@@ -9,6 +9,7 @@
                 <Text text="Hello, UI5!"/>
                 <Input value="{dataModel>/text}"/>
                 <Button text="Send message to Angular" press="sendMessage"/>
+                <Button text="Nav to detail" press="navToDetail"/>
             </Panel>
         </content>
     </Page>

@@ -1,0 +1,12 @@
+<mvc:View
+  controllerName="de.exxcellent.school.ui5.controller.Detail"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true">
+  <Page title="Detail page">
+    <content>
+      <Button text="Send custom message to Angular" press="sendMessage"/>
+      <Button text="Nav back" press="navBack"/>
+    </content>
+  </Page>
+</mvc:View>

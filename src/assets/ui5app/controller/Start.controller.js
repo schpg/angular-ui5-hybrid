@@ -15,6 +15,10 @@ sap.ui.define([
       sap.ui.getCore().getEventBus().publish('Main_Channel', 'Button_Event', {
         text: this.getView().getModel('dataModel').getProperty('/text')
       });
+    },
+
+    navToDetail: function () {
+      sap.ui.core.UIComponent.getRouterFor(this).navTo("detail");
     }
   });
 });
