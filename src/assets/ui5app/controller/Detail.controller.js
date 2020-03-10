@@ -4,11 +4,8 @@ sap.ui.define([
   "use strict";
   return Controller.extend("de.exxcellent.school.ui5.controller.Detail", {
 
-    onInit: function () {
-    },
-
     sendMessage: function () {
-      sap.ui.getCore().getEventBus().publish('Main_Channel', 'Button_Event', {
+      sap.ui.getCore().getEventBus().publish('UI5Launchpad', 'ui5ToAngular', {
         text: 'Message from Detail'
       });
     },

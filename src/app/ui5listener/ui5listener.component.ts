@@ -1,4 +1,5 @@
-import {Component, OnInit, ChangeDetectorRef} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Ui5EventBusService} from '../ui5-event-bus.service';
 
 @Component({
   selector: 'app-ui5listener',
@@ -9,24 +10,14 @@ export class Ui5listenerComponent implements OnInit {
 
   eventText: string;
 
-  constructor(private cdr: ChangeDetectorRef) {
+  constructor(private eventBus: Ui5EventBusService) {
     this.eventText = '<empty>';
   }
 
   ngOnInit() {
-    this.eventText = 'in onInit...';
-    setTimeout(() => {
-      if (window.ui5EventBus) {
-        window.ui5EventBus.subscribe('Main_Channel', 'Button_Event', (channel, event, data) => {
-          this.eventText = data.text;
-          this.cdr.detectChanges();
-        });
-        this.eventText = 'subscription done';
-      } else {
-        this.eventText = 'ui5-eventbus not available';
-      }
-    }, 5000);
-    this.eventText = 'onInit done...';
+    this.eventBus.subscribe('comm', (data: any) => {
+      this.eventText = data.text;
+    });
+    this.eventText = 'initialized';
   }
-
 }

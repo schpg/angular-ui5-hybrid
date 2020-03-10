@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {Ui5EventBusService} from './ui5-event-bus.service';
 
 @Component({
   selector: 'app-root',
@@ -6,13 +7,15 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Launchpad';
-
   @Input() appUrl = './assets/ui5app';
+  @Input() appNamespace = 'de.exxcellent.school.ui5';
+
+  constructor(private eventBus: Ui5EventBusService) {
+  }
 
   startUi5App() {
-    window.ui5EventBus.publish('UI5Launchpad', 'loadComponent', {
-      name: 'de.exxcellent.school.ui5',
+    this.eventBus.publish('loadComponent', {
+      name: this.appNamespace,
       url: this.appUrl
     });
   }

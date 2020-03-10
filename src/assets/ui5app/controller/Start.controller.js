@@ -12,7 +12,7 @@ sap.ui.define([
     },
 
     sendMessage: function () {
-      sap.ui.getCore().getEventBus().publish('Main_Channel', 'Button_Event', {
+      sap.ui.getCore().getEventBus().publish('UI5Launchpad', 'ui5ToAngular', {
         text: this.getView().getModel('dataModel').getProperty('/text')
       });
     },

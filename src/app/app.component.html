@@ -1,11 +1,6 @@
-<!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-  <button (click)="startUi5App()">Start UI5 app</button>
-  <input [value]="appUrl" placeholder="name"/>
-</div>
+<h1>Angular-UI5-hybrid</h1>
+<button (click)="startUi5App()">Start UI5 app</button>
+<input [(value)]="appUrl" placeholder="name"/>
+<input [(value)]="appNamespace" placeholder="namespace"/>
 <app-ui5listener></app-ui5listener>
 <app-launchpad></app-launchpad>
-<!--<app-ui5form></app-ui5form>-->
